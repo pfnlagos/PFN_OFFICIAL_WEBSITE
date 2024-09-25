@@ -1,0 +1,151 @@
+.pfnExecutivesContainer{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 7rem;
+}
+.execTitle{
+  text-align: center;
+  padding-top: 2rem;
+}
+.execTitle h2 {
+  color: #006633;
+  font-family: 'Tangerine', cursive;
+  font-size: 3rem;
+}
+.flip-box {
+    background-color: transparent;
+    width: 500px;
+    /* height: 400px; */
+    height: 150px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    cursor: pointer;
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  /* .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+  } */
+  
+  /* Position the front and back side */
+  .flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    background: radial-gradient(circle, rgba(148,218,233,1) 0%, rgba(174,238,221,1) 100%);
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-box-front {
+    background-color: #bbb;
+    color: black;
+  }
+  .flip-box-front img{
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+  
+  /* Style the back side */
+  .flip-box-back {
+    background-color: silver;
+    color: white;
+    transform: rotateY(180deg);
+    padding: 2rem 1rem;
+  }
+  .pfnExecutivesTxt{
+    padding: 1rem 0;
+  }
+  .pfnExecutivesTxt h2{
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  .pfnExecutivesIcons{
+      font-size: 2rem;
+      color: #222;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1rem;
+      cursor: pointer;
+  }
+  .flipBackTitle{
+    margin-bottom: 1rem;
+  }
+  .pfn-back-para{
+    /* padding-bottom: 1rem; */
+    text-align: left;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 0 !important;
+  }
+  .fa5Icon{
+    color: #333;
+    align-self: center;
+  }
+
+
+
+  @media only screen and (max-width: 600px) {
+    #pfnExecutivesContainer {
+      padding-top: 0;
+  }
+    .pfnExecutivesContainer {
+    padding: 2rem;
+    display: block;
+  }
+  .flip-box {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  .flip-box-front img {
+    width: 20px;
+    height: 20px;
+  }
+  .css-mhc70k-MuiGrid-root>.MuiGrid-item {
+    padding: 0;
+  }
+  .pfnExecutivesTxt h2 {
+    font-size: 1.2rem;
+  }
+  .pfnExecutivesTxt h5 {
+    font-size: 1rem;
+  }
+  .execTitle h2{
+    font-size: 2.2rem;
+  }
+  }
+  @media only screen and (min-width: 600px) {
+     .pfnExecutivesContainer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .pfnExecutivesContainer {
+    gap: 1rem;
+    padding: 2rem 2rem;
+  }
+  .flip-box {
+    width: 355px;
+  }
+  }
+  
+  @media only screen and (min-width: 992px) {
+    .flip-box {
+      width: 500px;
+    }
+  }
+@media only screen and (min-width: 1200px) {
+}

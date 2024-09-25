@@ -1,0 +1,199 @@
+.page12Top{
+    padding: 0 4rem;
+}
+.page12TopContent{
+    padding: 0 4rem;
+    text-align: center;
+}
+.page12TopTitle, .page12TopPara{
+    padding: 1rem 0;
+}
+.page12TopBtn{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* Center */
+.page12Center{
+    padding: 0rem 7rem;
+    background-color: #fff;
+}
+.page12CenterTitle{
+    padding: 1rem 0;
+}
+.page12CenterPara{
+    padding-top: 1rem;
+}
+
+.page12Center2{
+    padding: 4rem 7rem;
+    background: linear-gradient(rgba(18,30,34,.8), rgba(18,30,34,.8) ), url('../../images/banner2.png');
+    background-size: cover;
+}
+.page12Center2Para{
+    padding: 1rem 0;
+    text-align: center;
+}
+.page12Center2Para p{
+    color: #fff;
+    font-size: 1.2rem;
+    /* font-weight: bold; */
+}
+.page12Center2Btn{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+.page12Center3{
+    padding: 4rem;
+    display: flex;
+    gap: 2rem;
+}
+.page12Center3Left{
+    flex: 1;
+}
+.page12Center3Left img{
+    width: 100%;
+    /* border-radius: 50%; */
+}
+.page12Center3Right{
+    flex: 2;
+    align-self: center;
+}
+.page12Center3RightPara{
+    padding: 1rem 0;
+}
+
+/* Bottom */
+.page12Bottom{
+    padding: 4rem;
+    text-align: center;
+    background: #fff;
+}
+.colCard2{
+    padding: 2rem 0;
+}
+.page12Bottom2{
+    text-align: center;
+    padding: 4rem;
+}
+.page12BottomTitle2{
+    padding: 2rem;
+}
+.page12BottomImgBx{
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+.page12BottomImg{
+    width: 200px;
+    height: 200px;
+}
+.page12BottomImg img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.lsesList{
+    padding: 1rem;
+}
+.page12TopContentBox{
+    display: flex;
+}
+.page12TopContentBoxLeft{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.page12TopContentBoxLeft img{
+    width: 70%;
+}
+.page12TopContentBoxRight{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.page12TopContentBoxRight img{
+    width: 70%;
+}
+.page12TopContentBoxLeftPara{
+    margin-top: 2rem;
+    padding: 0 3rem 0 0;
+    text-align: left;
+    max-width: 600px;
+}
+.page12TopContentBoxRightList{
+    padding: 0 1rem;
+}
+#page12KnowMoreBtn{
+    text-align: left;
+    padding: 1rem 0;
+}
+.page12ParaSpace{
+    margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .page12Top {
+    padding: 2rem;
+    }
+    .page12TopContent {
+        padding: 0rem;
+        text-align: center;
+    }
+    .page12TopBtn {
+        display: block;
+    }
+    /* .jtZqMD {
+        width: auto;
+        height: auto;
+        padding: 1rem 0;
+    } */
+    .page12Center {
+        padding: 2rem;
+    }
+    .page12Center2 {
+        padding: 2rem;
+    }
+    .page12Center3 {
+        padding: 2rem;
+        display: block;
+        /* gap: 2rem; */
+    }
+    .page12Bottom {
+        padding: 2rem;
+    }
+    .page12Bottom2 {
+        text-align: center;
+        padding: 2rem;
+    }
+    .page12TopContentBox {
+        display: block;
+    }
+    .page12TopContentBoxLeft img, .page12TopContentBoxRight img {
+        width: 50%;
+        align-self: center;
+    }
+    .page12TopContentBoxLeftPara {
+        padding: 0;
+        margin: 2rem 0;
+    }
+    #page12KnowMoreBtn {
+        text-align: center;
+        padding: 0;
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    .page12TopContent {
+        padding: 0px 2rem;
+    }
+  }
+  @media only screen and (min-width: 992px) {
+    .page12TopContent {
+        padding: 0px 4rem;
+    }
+}
+@media only screen and (min-width: 1200px) {
+}

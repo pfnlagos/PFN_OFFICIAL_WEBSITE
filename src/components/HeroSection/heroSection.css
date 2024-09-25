@@ -1,0 +1,160 @@
+#hero{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    padding: 0 2rem;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    position: relative;
+    top: 20%;
+    user-select: none;
+}
+.topText h4{
+    color: #fff;
+    font-size: 22px;
+    font-weight: 300;
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+.centerTextContainer{
+    margin-bottom: 50px;
+}
+.centerText h1{
+    color: #fff;
+    line-height: 40px;
+    margin-top: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+/* .div1, .div2, .div3{
+    opacity: 0;
+    height: 0;
+} */
+.div1{
+    animation: animation 12s infinite;
+    /* animation-delay: 6s; */
+}
+/* .div2{
+    animation: animation 12s infinite;
+    animation-delay: 4s;
+}
+.div3{
+    animation: animation 12s infinite;
+    animation-delay: 8s;
+} */
+/* @keyframes animation{
+    0%{
+        opacity: 0;
+        height: auto;
+    }
+    16%{
+        opacity: 1;
+    }
+    33%{
+        opacity: 0;
+        height: 0;
+    }
+    100%{
+        opacity: 0;
+        height: 0;
+    }
+} */
+
+/* #ReactBackgroundSlider > figure {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: -13px 0 !important;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: -1000;
+    margin: 0;
+    backface-visibility: hidden;
+    animation: imageAnimation 36s linear infinite -0.5s;
+} */
+
+@media only screen and (max-width: 600px) {
+    #hero{
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        padding: 0 2rem;
+    }
+    #ReactBackgroundSlider > figure {
+        height: 35% !important;
+        width: 100%;
+        position: absolute;
+        top: 20% !important;
+        left: 0px;
+        color: transparent;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        z-index: -1000;
+        margin: 0;
+        backface-visibility: hidden;
+        animation: imageAnimation 36s linear infinite -0.5s;
+    }
+    .content{
+        position: relative;
+        top: 10%;
+        width: 100%;
+        align-items: center;
+    }
+    .topText h4{
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin: 0;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .centerText h1{
+        font-size: 1.5rem;
+        color: #fff;
+        line-height: 40px;
+        margin-top: 0;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .div1 .topText h4, .div2 .topText h4, .div3 .topText h4{
+        font-size: .8rem;
+    }
+    
+    .centerTextContainer .centerText h1{
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #ReactBackgroundSlider > figure {
+        background-size: 115% 100% !important;
+        height: 65% !important;
+    }
+    #hero{
+        height: 65vh !important;
+    }
+  }
+
+@media only screen and (min-width: 992px) {
+    #ReactBackgroundSlider > figure {
+        background-size: cover !important;
+        height: 100% !important;
+    }
+    #hero{
+        height: 100vh !important;
+    }
+  }

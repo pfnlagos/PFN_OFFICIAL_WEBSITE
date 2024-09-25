@@ -1,0 +1,107 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+.header{
+    margin: auto;
+    /* margin-bottom: 60px; */
+    margin-top: 4rem;
+    padding: 0 7rem;
+}
+.header .topHeader{
+    margin-top: 2rem;
+}
+.header .centerHeader{
+    padding: 0 0 24px;
+    /* text-transform: uppercase; */
+}
+.header .bottomHeader{
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0 2rem;
+}
+.header .topHeader, .centerHeader, .bottomHeader{
+    text-align: center;
+}
+.topHeader h2{
+    color: #006633;
+    font-family: 'Tangerine', cursive;
+    font-size: 3rem;
+}
+.content{
+    padding: 0 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+.card1{
+    display: flex;
+    flex-direction: column;
+    /* width: 400px; */
+    transition: transform .2s ease-in-out;
+    transform: scale(1);
+    background-color: #f1f1eb;
+}
+.card1:hover{
+    transform: scale(1.05);
+}
+.card1 img{
+    width: 100%;
+    /* height: 200px;
+    object-fit: cover;
+    object-position: top; */
+}
+.contentTextWrapper{
+    padding: 1rem;
+}
+.contentTextWrapper .contentText{
+    background-color: #f1f1eb;
+    /* padding: 20px 35px 30px; */
+    padding: 1rem 0;
+    text-align: center;
+    position: relative;
+    margin-bottom: 0.5em;
+    margin-top: 0;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+.contentTextWrapper .contentPara{
+    font-weight: 300;
+    font-size: 1rem;
+    /* padding: 20px 35px 30px; */
+    /* padding: 0 2rem; */
+    text-align: center;
+}
+.circledArrow{
+    font-size: 1.5rem !important;
+    align-self: flex-end;
+    color: green;
+    padding: 1rem;
+}
+
+@media only screen and (max-width: 600px){
+   .content{
+       grid-template-columns: 1fr;
+       padding: 0;
+   }
+   .header {
+    margin-top: 2rem;
+    padding: 0 2rem;
+   }
+   .topHeader h2 {
+    font-size: 2.2rem;
+    }
+    .centerHeader{
+        padding: 0 !important;
+    }
+    .centerHeader h2{
+        font-size: 1.2rem;
+    }
+    .card1{
+        margin-top: 2rem;
+    }
+    .bottomHeader span{
+        font-size: .8rem !important;
+    }
+    .contentText h2{
+        font-size: 1.2rem !important;
+    }
+}

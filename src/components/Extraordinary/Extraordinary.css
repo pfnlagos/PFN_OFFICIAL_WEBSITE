@@ -1,0 +1,27 @@
+.extraGrid{
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 1rem;
+    row-gap: 1rem; */
+}
+.extraLink{
+    text-decoration: none !important;
+}
+@media only screen and (max-width: 600px){
+    #extraIframe{
+        width: 100%;
+    }
+    .extraGrid{
+        /* grid-template-columns: 1fr; */
+    }
+    .footerTopBtn {
+        font-weight: 500;
+        /* min-width: 125px; */
+        /* font-size: 1rem; */
+        padding: 0 5px;
+        text-align: center;
+    }
+    .extraCardTitle h2{
+        font-size: 1.2rem;
+    }
+}

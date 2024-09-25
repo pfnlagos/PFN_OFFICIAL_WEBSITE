@@ -1,0 +1,29 @@
+.pageContentTopList{
+    padding: 1rem;
+}
+.pageContentTopListItems{
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+}
+.pageContentPara{
+    text-align: justify;
+}
+.reduce{
+    padding: 0 7rem;
+}
+.changeText{
+    color: #008753;
+    font-size: 35px;
+    text-transform: capitalize;
+    font-style: normal;
+    font-weight: 900;
+}
+
+@media only screen and (max-width: 600px) {
+    .reduce{
+        padding: 0;
+    }
+    .pageContentTopListItems {
+        padding: 0rem 0.5rem;
+    }
+}
