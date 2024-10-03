@@ -41,10 +41,10 @@
     gap: 1rem;
 }
 .top .nav .logo{
-    width: 200px;
+    width: 250px;
 }
 .top .nav .logo img{
-    width: 200px;
+    width: 250px;
 }
 .top .nav .logo .logoText{
     margin-left: 3px;
@@ -55,7 +55,7 @@
     letter-spacing: 3px;
 }
 #logoTxt2{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     letter-spacing: 2px;
     margin-left: 4px;
     position: relative;
@@ -131,7 +131,7 @@
     justify-content: space-between;
     padding: 2rem 7rem;
     color: #fff;
-    font-weight: 500;
+    font-weight: 700;
     text-transform: uppercase;
 }
 .closeMenu{
@@ -167,7 +167,7 @@
 .mainListItemsCenterLeftContainer h3{
     text-align: center;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.9rem;
 }
 .mainListItemsCenterLeftImg{
     width: 100%;
@@ -195,7 +195,7 @@
     padding-bottom: 1rem;
 }
 .mainListItemsCenterLeftBottomTxt h4{
-    font-size: .75rem;
+    font-size: 1rem;
     color: #fff;
 }
 
