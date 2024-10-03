@@ -190,131 +190,250 @@ const Footer = () => {
 
   return (
     <Container>
-        <div className="topFooter">
-              <button className='footerTopBtn' onClick={()=> {setOpen(!open)}}>{open ? "close" : "Select a Province"}</button>
-            <div className={open ? "footerCenter" : "footerCenterNone"}>
-              {/* <Link to="/provinces">
+      <div className="topFooter">
+        <button
+          className="footerTopBtn"
+          onClick={() => {
+            setOpen(!open);
+          }}
+        >
+          {open ? "close" : "Select a Province"}
+        </button>
+        <div className={open ? "footerCenter" : "footerCenterNone"}>
+          {/* <Link to="/provinces">
               <Button2 outline BtnText='Select a Province' />
               </Link> */}
-              <div className={open ? "footerCenterCloseIcon text-danger d-block d-sm-none" : 'd-none'} onClick={handleClose}>
-              <i className="fa fa-close" />
+          <div
+            className={
+              open
+                ? "footerCenterCloseIcon text-danger d-block d-sm-none"
+                : "d-none"
+            }
+            onClick={handleClose}
+          >
+            <i className="fa fa-close" />
+          </div>
+          {allProvinces.map((data, i) => (
+            <>
+              <div key={i} className={open ? "sideBlock" : "none"}>
+                <Link
+                  to={{
+                    pathname: `/province/${data.id}`,
+                    state: {
+                      province: `${data.province}`,
+                      chairman: `${data.chairman}`,
+                      Secretariat: `${data.Secretariat}`,
+                      MeetingDays: `${data.MeetingDays}`,
+                      time: `${data.time}`,
+                      mapLink: `${data.mapLink}`
+                    }
+                  }}
+                  className="links"
+                  id={open ? "textBlock" : "textNone"}
+                >
+                  <div className="footerHoverItems" onClick={handleClose}>
+                    {data.province}
+                  </div>
+                </Link>
               </div>
-              {allProvinces.map((data, i)=> (
-                <>
-                <div key={i} className={open ? "sideBlock" : "none"}>
-                  <Link  to={{pathname: `/province/${data.id}`, state: {province: `${data.province}`, chairman: `${data.chairman}`,Secretariat: `${data.Secretariat}`, MeetingDays: `${data.MeetingDays}`, time: `${data.time}`, mapLink: `${data.mapLink}`}}} className="links" id={open ? 'textBlock' : 'textNone'}>
-                      <div className="footerHoverItems" onClick={handleClose}>{data.province}</div>
-                  </Link>
-                </div>
-                </>
-              ))}
-            </div>
+            </>
+          ))}
         </div>
-        <div className="bottomFooter">
-            <div className="bottomFooterContent">
-                <div className="align-self-start">
-                    <div className="logoBox">
-                        <img src={PFN} width={200} alt="" />
-                        {/* <div className="logoText">
+      </div>
+      <div className="bottomFooter">
+        <div className="bottomFooterContent">
+          <div className="align-self-start">
+            <div className="logoBox">
+              <img src={PFN} width={200} alt="" />
+              {/* <div className="logoText">
                             <h1>PFN</h1>
                             <h2>Lagos State</h2>
                         </div> */}
-                    </div>
-                     <h5 className='footerAddress'>5-9 Bode Thomas Road, <br /> Onipanu, Lagos Nigeria </h5>
-                      <div className="socialBox">
-                          <div className="social" style={{cursor: "pointer"}}>
-                              <a href="https://www.facebook.com/pfnlagostate" target="_blank" rel="noopener noreferrer nofollow" className='links'>
-                                  <i className="fa fa-facebook footerSocialIcon" aria-hidden="true" />
-                              </a>
-                              {/* <a href="https://google.com" target="_blank" rel="noreferrer"></a> */}
-                              <a href="https://www.twitter.com/pfnlagostate" target="_blank" rel="noopener noreferrer nofollow" className='links'>
-                                  <i className="fa fa-twitter footerSocialIcon" aria-hidden="true" />
-                              </a>
-                              <a href="https://www.instagram.com/pfnlagostate" target="_blank" rel="noopener noreferrer nofollow" className='links'>
-                                  <i className="fa fa-instagram footerSocialIcon" aria-hidden="true" />
-                              </a>
-                              <a href="https://www.youtube.com/channel/UChZXqT3Wg8buJkykYI99vCQ" target='_blank' rel="noopener noreferrer nofollow" className='links'>
-                                  <i className="fa fa-youtube footerSocialIcon" aria-hidden="true" />
-                              </a>
-                              <a href="https://wa.link/hd88ub" target='_blank' rel="noopener noreferrer nofollow" className='links'>
-                                <i className="fa fa-whatsapp footerSocialIcon" aria-hidden="true" />
-                              </a>
-                          </div>
-                      </div>
-                </div>
-                <div className="align-self-start">
-                  <h6 className='footerQuickLinkListTitle'>Quick Links</h6>
-                  <ul className="footerQuickLinkList">
-                    <Link to="/what-we-believe"><li className="footerQuickLinksListItems">what we believe</li></Link>
-                    <Link to="/our-mission"><li className="footerQuickLinksListItems">our mission</li></Link>
-                    <Link to="/past-pfn-chairmen"><li className="footerQuickLinksListItems">past lagos state pfn chairman</li></Link>
-                    <Link to="/pfn-executives"><li className="footerQuickLinksListItems">pfn lagos state executives</li></Link>
-                    <Link to="/lses"><li className="footerQuickLinksListItems">the executive structure</li></Link>
-                    <Link to="/directorate"><li className="footerQuickLinksListItems">directorates</li></Link>
-                    <Link to="/prayer"><li className="footerQuickLinksListItems">request for prayer</li></Link>
-                  </ul>
-                </div>
-                <div className="align-self-start d-flex flex-column gap-3">
-                  <div className="newsLetterInputContainer">
-                      <MailchimpFormContainer />
-                  </div>
-                  <div className="footerButton">
-                      <div className="buttonBox">
-                        <Link to="/give">
-                          <button id='btn1'>Give</button>
-                        </Link>
-                        <Link to="/chairman-messages">
-                          <button id='btn2'>Messages</button>
-                        </Link>
-                      </div>
-                  </div>
-                </div>
-                {/* <div className="footerButton">
+            </div>
+            <h5 className="footerAddress">
+              5-9 Bode Thomas Road, <br /> Onipanu, Lagos Nigeria{" "}
+            </h5>
+            <div className="socialBox">
+              <div className="social" style={{ cursor: "pointer" }}>
+                <a
+                  href="https://www.facebook.com/pfnlagostate"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="links"
+                >
+                  <i
+                    className="fa fa-facebook footerSocialIcon"
+                    aria-hidden="true"
+                  />
+                </a>
+                {/* <a href="https://google.com" target="_blank" rel="noreferrer"></a> */}
+                <a
+                  href="https://www.twitter.com/pfnlagostate"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="links"
+                >
+                  <i
+                    className="fa fa-twitter footerSocialIcon"
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="https://www.instagram.com/pfnlagostate"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="links"
+                >
+                  <i
+                    className="fa fa-instagram footerSocialIcon"
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="https://www.youtube.com/channel/UChZXqT3Wg8buJkykYI99vCQ"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="links"
+                >
+                  <i
+                    className="fa fa-youtube footerSocialIcon"
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="https://wa.link/hd88ub"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="links"
+                >
+                  <i
+                    className="fa fa-whatsapp footerSocialIcon"
+                    aria-hidden="true"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="align-self-start">
+            <h6 className="footerQuickLinkListTitle">Quick Links</h6>
+            <ul className="footerQuickLinkList">
+              <Link to="/what-we-believe">
+                <li className="footerQuickLinksListItems">what we believe</li>
+              </Link>
+              <Link to="/our-mission">
+                <li className="footerQuickLinksListItems">our mission</li>
+              </Link>
+              <Link to="/past-pfn-chairmen">
+                <li className="footerQuickLinksListItems">
+                  past lagos state pfn chairman
+                </li>
+              </Link>
+              <Link to="/pfn-executives">
+                <li className="footerQuickLinksListItems">
+                  pfn lagos state executives
+                </li>
+              </Link>
+              <Link to="/lses">
+                <li className="footerQuickLinksListItems">
+                  the executive structure
+                </li>
+              </Link>
+              <Link to="/directorate">
+                <li className="footerQuickLinksListItems">directorates</li>
+              </Link>
+              <Link to="/prayer">
+                <li className="footerQuickLinksListItems">
+                  request for prayer
+                </li>
+              </Link>
+            </ul>
+          </div>
+          <div className="align-self-start d-flex flex-column gap-3">
+            <div className="newsLetterInputContainer">
+              <MailchimpFormContainer />
+            </div>
+            <div className="footerButton">
+              <div className="buttonBox">
+                <Link to="/give">
+                  <button id="btn1">Give</button>
+                </Link>
+                <Link to="/chairman-messages">
+                  <button id="btn2">Messages</button>
+                </Link>
+              </div>
+            </div>
+          </div>
+          {/* <div className="footerButton">
                     <div className="buttonBox">
                         <Button BtnText='Messages' />
                         <Button outline BtnText='Give' />
                     </div>
                 </div> */}
-                <div style={{textAlign: "center"}} className="align-self-start" id='footerIframe'>
-                {/* <div className="fb-page" data-href="https://www.facebook.com/pfnlagostate/" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/pfnlagostate/" className="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/pfnlagostate/">Pentecostal Fellowship of Nigeria - PFN Lagos State</a></blockquote></div> */}
-                <iframe title="pfn lagos facebook page" aria-hidden="true" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpfnlagostate%2F&tabs=none&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" style={{border: "none", overflow: "hidden", width: "340px"}} scrolling="no" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                  {/* <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fpfnlagostate&width=450&layout=standard&action=like&size=small&share=true&height=35&appId" style={{border: "none", overflow: "hidden", width: "100%"}} scrolling="no" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share;" /> */}
-                </div>
-            </div>
-            {
-              user ?
-              <div className="eventTime">
-                <div className="authBx">
-                  {/* <Link to="/settings" id='links'> */}
-                    <div className="authBxName">
-                      <span>{user.user.username}</span>
-                    </div>
-                  {/* </Link> */}
-                </div>
-                <h6 className="authBxLogout" onClick={handleLogOut}>Log out</h6>
-              </div>
-              :
-              <div className="eventTime">
-                <Link to="/login" id='links'>
-                <h6 className="authBxLogout">{user ? "Log out" : <i className="fa fa-lock" aria-hidden="true" />}</h6>
-                </Link>
-              </div>
-            }
+          <div
+            style={{ textAlign: "center" }}
+            className="align-self-start"
+            id="footerIframe"
+          >
+            <iframe
+              name="f143a283b9937e8"
+              class="lazyload"
+              data-testid="fb:page Facebook Social Plugin"
+              title="fb:page Facebook Social Plugin"
+              allowtransparency="true"
+              allowfullscreen="true"
+              scrolling="no"
+              allow="encrypted-media"
+              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpfnlagostate%2F&tabs=none&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+            ></iframe>
+          </div>
         </div>
-        {/* <div style={{textAlign: "center"}}>
+        {user ? (
+          <div className="eventTime">
+            <div className="authBx">
+              {/* <Link to="/settings" id='links'> */}
+              <div className="authBxName">
+                <span>{user.user.username}</span>
+              </div>
+              {/* </Link> */}
+            </div>
+            <h6 className="authBxLogout" onClick={handleLogOut}>
+              Log out
+            </h6>
+          </div>
+        ) : (
+          <div className="eventTime">
+            <Link to="/login" id="links">
+              <h6 className="authBxLogout">
+                {user ? (
+                  "Log out"
+                ) : (
+                  <i className="fa fa-lock" aria-hidden="true" />
+                )}
+              </h6>
+            </Link>
+          </div>
+        )}
+      </div>
+      {/* <div style={{textAlign: "center"}}>
         <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fpfnlagostate&width=450&layout=standard&action=like&size=small&share=true&height=35&appId" width="450" height="35" style={{border: "none", overflow: "hidden"}} scrolling="no" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" />
         </div> */}
-        <div className='footerCredits'>
-          <Credits>
-              &copy; 2022 PFN Lagos. All Rights Reserved.
-          </Credits>
-          <Credits>
-              Designed & Developed by
-              &#160;<a href="https://elonatech.com.ng/" target='_blank' rel="noopener noreferrer nofollow" className='links' style={{color: "#990000"}}>Elonatech Nigeria Limited</a>
-          </Credits>
-        </div>
+      <div className="footerCredits">
+        <Credits>&copy; 2022 PFN Lagos. All Rights Reserved.</Credits>
+        <Credits>
+          Designed & Developed by &#160;
+          <a
+            href="https://elonatech.com.ng/"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="links"
+            style={{ color: "#990000" }}
+          >
+            Elonatech Nigeria Limited
+          </a>
+        </Credits>
+      </div>
     </Container>
-  )
+  );
 }
 
 export default Footer
