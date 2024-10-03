@@ -63,7 +63,7 @@ const ChairmanMsgForm = () => {
       formData.append("title", data.title)
       formData.append("desc", data.desc)
 
-      const res = await fetch("https://pfn-lagos.herokuapp.com/chairmanMsg", {method: "POST", body: formData})
+      const res = await fetch("https://pfn-api.onrender.com/chairmanMsg", {method: "POST", body: formData})
       // setData(res.data)
 
       if (res.ok) {

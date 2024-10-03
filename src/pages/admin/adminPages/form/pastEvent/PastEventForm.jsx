@@ -67,7 +67,7 @@ const PastEventForm = () => {
       formData.append("time", data.time)
       formData.append("venue", data.venue)
 
-      const res = await fetch("https://pfn-lagos.herokuapp.com/pastEvent", {method: "POST", body: formData})
+      const res = await fetch("https://pfn-api.onrender.com/pastEvent", {method: "POST", body: formData})
       // setData(res.data)
 
       if (res.ok) {

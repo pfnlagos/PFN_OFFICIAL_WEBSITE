@@ -74,7 +74,7 @@ const UpcomingEventFullDetail = () => {
   
   useEffect(()=> {
     const getFullEvents = async() => {
-      const res = await axios.get(`https://pfn-lagos.herokuapp.com/upcomingEvent/` + id)
+      const res = await axios.get(`https://pfn-api.onrender.com/upcomingEvent/` + id)
       setFullEventData(res.data)
     }
     getFullEvents()

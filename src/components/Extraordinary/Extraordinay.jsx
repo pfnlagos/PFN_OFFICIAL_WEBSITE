@@ -179,7 +179,7 @@ const Extraordinay = () => {
 
   useEffect(()=> {
     const getPastEvents = async() => {
-      const res = await axios.get('https://pfn-lagos.herokuapp.com/pastEvent')
+      const res = await axios.get('https://pfn-api.onrender.com/pastEvent')
       setPastEventData(res.data)
     }
     getPastEvents()
@@ -187,7 +187,7 @@ const Extraordinay = () => {
 
   useEffect(()=> {
     const getCurrentEvents = async() => {
-      const res = await axios.get('https://pfn-lagos.herokuapp.com/currentEvent')
+      const res = await axios.get('https://pfn-api.onrender.com/currentEvent')
       setCurrentEventData(res.data)
     }
     getCurrentEvents()
@@ -195,7 +195,7 @@ const Extraordinay = () => {
 
   useEffect(()=> {
     const getCurrentEvents = async() => {
-      const res = await axios.get('https://pfn-lagos.herokuapp.com/upcomingEvent')
+      const res = await axios.get('https://pfn-api.onrender.com/upcomingEvent')
       setUpcomingEventData(res.data)
     }
     getCurrentEvents()

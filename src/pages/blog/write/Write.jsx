@@ -73,7 +73,7 @@ const Write = () => {
       formData.append("desc", data.desc)
       // formData.append("date", data.date)
 
-      const res = await fetch("https://pfn-lagos.herokuapp.com/post", {method: "POST", body: formData})
+      const res = await fetch("https://pfn-api.onrender.com/post", {method: "POST", body: formData})
       // setData(res.data)
       console.log(res);
 

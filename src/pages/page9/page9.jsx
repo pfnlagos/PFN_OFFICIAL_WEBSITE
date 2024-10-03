@@ -107,7 +107,7 @@ const Page9 = () => {
       directorat
     }
 
-   await axios.post('https://pfn-lagos.herokuapp.com/directorate/', body, {
+   await axios.post('https://pfn-api.onrender.com/directorate/', body, {
       headers: {
         'Content-type': 'application/json'
       }
@@ -285,10 +285,10 @@ const Page9 = () => {
                         <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" value = {message} onChange = {(e) => setMessage(e.target.value)} />
                       </div>
                       <div className="col-lg-12 mb-1">
-                        <ReCAPTCHA
+                        {/* <ReCAPTCHA
                             sitekey={process.env.REACT_APP_RECAPTCHA}
                             onChange={onChange}
-                          />
+                          /> */}
                       </div>
                       <div  style={isVerified ? {display: "block"} : {display: "none"}}>
                         <button type="submit" className="btn btn-primary" disabled = {loading} onClick = {handleRequest}>Submit</button>

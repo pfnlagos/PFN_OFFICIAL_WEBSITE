@@ -90,7 +90,7 @@ const Announcement = () => {
 
   useEffect(()=> {
     const getAnnouncentData = async() => {
-      const res = await axios.get('https://pfn-lagos.herokuapp.com/cloudUser')
+      const res = await axios.get('https://pfn-api.onrender.com/cloudUser')
       setAnnouncentData(res.data)
     }
     getAnnouncentData()

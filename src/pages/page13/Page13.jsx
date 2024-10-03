@@ -71,7 +71,7 @@ const Page13 = () => {
       address
     }
 
-   await axios.post('https://pfn-lagos.herokuapp.com/prayer-request/', body, {
+   await axios.post('https://pfn-api.onrender.com/prayer-request/', body, {
       headers: {
         'Content-type': 'application/json'
       }
@@ -160,12 +160,12 @@ const Page13 = () => {
                       <PText>Prayer Request*</PText>
                       <textarea name="" id="" value={request} onChange={(e)=> setRequest(e.target.value)}/>
                   </div>
-              <div className="col-lg-12 mb-1">
+              {/* <div className="col-lg-12 mb-1">
                 <ReCAPTCHA
                     sitekey={process.env.REACT_APP_RECAPTCHA}
                     onChange={onChange}
                   />
-              </div>
+              </div> */}
               <div  style={isVerified ? {display: "block"} : {display: "none"}}>
                   <Button BtnText="SUBMIT" disabled = {loading} onClick={handleRequest} />
               </div>

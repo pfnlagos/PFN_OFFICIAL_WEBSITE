@@ -55,7 +55,7 @@ const Upcoming = () => {
 
   useEffect(()=> {
     const getCurrentEvents = async() => {
-      const res = await axios.get('https://pfn-lagos.herokuapp.com/upcomingEvent')
+      const res = await axios.get('https://pfn-api.onrender.com/upcomingEvent')
       setCurrentEventData(res.data)
     }
     getCurrentEvents()
@@ -63,7 +63,7 @@ const Upcoming = () => {
 
   const handleDelete = async(id) => {
     try {
-      const res = await axios.delete(`https://pfn-lagos.herokuapp.com/upcomingEvent/${id}`)
+      const res = await axios.delete(`https://pfn-api.onrender.com/upcomingEvent/${id}`)
       
         const updated = currentEventData.filter((r)=> r._id !== id)
         setCurrentEventData(updated)

@@ -100,7 +100,7 @@ const ContactPage = () => {
       location
     }
 
-   await axios.post('https://pfn-lagos.herokuapp.com/mail/', body, {
+   await axios.post('https://pfn-api.onrender.com/mail/', body, {
       headers: {
         'Content-type': 'application/json'
       }
@@ -235,10 +235,10 @@ const ContactPage = () => {
                       </div>
                     </div>
                     <div className="col-lg-12">
-                      <ReCAPTCHA
+                      {/* <ReCAPTCHA
                           sitekey={process.env.REACT_APP_RECAPTCHA}
                           onChange={onChange}
-                        />
+                        /> */}
                       {/* <button type="submit" className="btn btn-dark mt-3 mb-3 text-white border-0 py-2 px-3" disabled = {loading} onClick = {handleRequest}><span> SUBMIT NOW <SendIcon /> </span></button> */}
                     </div>
                     <div className="col-lg-12" style={isVerified ? {display: "block"} : {display: "none"}}>

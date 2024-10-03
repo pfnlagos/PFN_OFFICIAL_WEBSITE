@@ -18,7 +18,7 @@ export const login = (loginData, history) => async(dispatch) => {
     try {
         const {data} = await api.login(loginData)
         dispatch({type: AUTH, payload: data})
-        // console.log(data);
+        console.log(data);
         alert("Successful!")
         window.location.replace("/blogs")
     } catch (error) {

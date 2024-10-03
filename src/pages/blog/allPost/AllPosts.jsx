@@ -96,7 +96,7 @@ const Allposts = () => {
     const getPosts = async() => {
       setIsLoading(true)
       try {
-        const res = await axios.get('https://pfn-lagos.herokuapp.com/post')
+        const res = await axios.get('https://pfn-api.onrender.com/post')
         setPost(res.data)
       } catch (error) {
         

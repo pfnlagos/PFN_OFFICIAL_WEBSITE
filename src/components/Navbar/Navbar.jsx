@@ -80,7 +80,7 @@ const Navbar = () => {
 
     useEffect(()=> {
       const getFeatured = async () => {
-        const res = await axios.get("https://pfn-lagos.herokuapp.com/currentEvent")
+        const res = await axios.get("https://pfn-api.onrender.com/currentEvent")
         setFeatured(res.data)
         
       }
@@ -91,9 +91,10 @@ const Navbar = () => {
     let featuredImg = featured.pop()
     console.log(featuredImg?.avatar)
 
-    if (featuredImg?.avatar !== undefined) {
-      localStorage.setItem("storeFeatured", featuredImg.avatar)
+    if (featuredImg?.avatar != null) {
+      localStorage.setItem("storeFeatured", featuredImg.avatar);
     }
+    
 
 
     const allProvinces = provinces.sort(function(a, b) {

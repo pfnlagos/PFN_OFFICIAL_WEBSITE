@@ -114,7 +114,7 @@ const FullDetail = (props) => {
     const handleLikes = async (userId, postId) => {
         if (!post.likes.includes(userId)) {
             try {
-                const res = await axios.put("https://pfn-lagos.herokuapp.com/api/post/likePost", {userId, postId})
+                const res = await axios.put("https://pfn-api.onrender.com/api/post/likePost", {userId, postId})
                 dispatch({type: LIKE, payload: res.data}) 
                 console.log(res.data);
             } catch (error) {
@@ -122,7 +122,7 @@ const FullDetail = (props) => {
             }
         }else{
             try {
-                const res = await axios.put("https://pfn-lagos.herokuapp.com/api/post/unLikePost", {userId, postId})
+                const res = await axios.put("https://pfn-api.onrender.com/api/post/unLikePost", {userId, postId})
                 dispatch({type: LIKE, payload: res.data}) 
                 console.log(res.data);
             } catch (error) {

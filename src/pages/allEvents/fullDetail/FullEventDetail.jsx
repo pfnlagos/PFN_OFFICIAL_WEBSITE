@@ -74,7 +74,7 @@ const FullEventDetail = () => {
   
   useEffect(()=> {
     const getFullEvents = async() => {
-      const res = await axios.get(`https://pfn-lagos.herokuapp.com/currentEvent/` + id)
+      const res = await axios.get(`https://pfn-api.onrender.com/currentEvent/` + id)
       setFullEventData(res.data)
     }
     getFullEvents()

@@ -52,7 +52,7 @@ const Past = () => {
 
   useEffect(()=> {
     const getPastEvents = async() => {
-      const res = await axios.get('https://pfn-lagos.herokuapp.com/pastEvent')
+      const res = await axios.get('https://pfn-api.onrender.com/pastEvent')
       setPastEventData(res.data)
     }
     getPastEvents()
@@ -60,7 +60,7 @@ const Past = () => {
 
   const handleDelete = async(id) => {
     try {
-      const res = await axios.delete(`https://pfn-lagos.herokuapp.com/pastEvent/${id}`)
+      const res = await axios.delete(`https://pfn-api.onrender.com/pastEvent/${id}`)
       
         const updated = pastEventData.filter((r)=> r._id !== id)
         setPastEventData(updated)

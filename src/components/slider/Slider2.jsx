@@ -31,7 +31,7 @@ const Slider2 = () => {
   const [announcement, setAnnouncement] = useState([])
   useEffect(()=> {
     const getAnnouncement = async () => {
-      const res = await axios.get("https://pfn-lagos.herokuapp.com/cloudUser")
+      const res = await axios.get("https://pfn-api.onrender.com/cloudUser")
       setAnnouncement(res.data)
       
     }
