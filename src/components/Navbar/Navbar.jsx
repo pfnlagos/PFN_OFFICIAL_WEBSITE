@@ -9,17 +9,14 @@ import { mobile } from '../../responsive'
 import Button2 from '../Button/Button2'
 import moment from 'moment'
 import Button from '../Button/Button'
-
 import { provinces } from '../../teamMembers/provinces'
 import { Accordion, Card } from "react-bootstrap";
 import useCollapse from 'react-collapsed'
 import axios from 'axios'
-
 const Container = styled.nav`
     /* ${mobile({display: 'none'})} */
     user-select: none;
 `
-
 function Section(props) {
   const config = {
     defaultExpanded: props.defaultExpanded || true,
@@ -43,7 +40,6 @@ function Section(props) {
     </div>
   );
 }
-
 const user = JSON.parse(localStorage.getItem('mern_crud3_copy_user'))
 const Navbar = () => {
     const [showNav, setShowNav] = useState(false)
@@ -62,12 +58,9 @@ const Navbar = () => {
     const handleClose = () => {
       setOpen(false);
       setOpenMain(false)
-    } 
-
-
+    }
     const [isExpanded, setExpanded] = useState(false)
     const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded })
-
     useEffect(()=>{
         window.addEventListener('scroll', ()=>{
             if (window.scrollY > 300) {
@@ -78,25 +71,23 @@ const Navbar = () => {
         })
     })
 
-    useEffect(()=> {
+
+
+
+
+useEffect(()=> {
       const getFeatured = async () => {
-        const res = await axios.get("https://pfn-api.onrender.com/currentEvent")
+        const res = await axios.get("https://pfn-lagos.herokuapp.com/currentEvent")
         setFeatured(res.data)
-        
       }
       getFeatured()
     }, [])
-
     // console.log(featured);
     let featuredImg = featured.pop()
     console.log(featuredImg?.avatar)
-
-    if (featuredImg?.avatar != null) {
-      localStorage.setItem("storeFeatured", featuredImg.avatar);
+    if (featuredImg?.avatar !== undefined) {
+      localStorage.setItem("storeFeatured", featuredImg.avatar)
     }
-    
-
-
     const allProvinces = provinces.sort(function(a, b) {
       const nameA = a.province.toUpperCase(); // ignore upper and lowercase
       const nameB = b.province.toUpperCase(); // ignore upper and lowercase
@@ -106,20 +97,17 @@ const Navbar = () => {
       if (nameA > nameB) {
         return 1;
       }
-    
       // names must be equal
       return 0;
     });
-    
-
   return (
     <Container id="navbar" className={scroll && "activeNavbar"}>
       {/* <Announcement /> */}
-      {user?.user?.email === "admin@pfnlagosstate.org" ? 
+      {user?.user?.email === "admin@pfnlagosstate.org" ?
         <div className='adminLink text-center'>
           <Link to="/admin">
           Go To Dashboard
-          </Link> 
+          </Link>
         </div>
         : ""
       }
@@ -166,18 +154,17 @@ const Navbar = () => {
                         </Link>
                         <div className="mainListItemsCenterRightTopPara" onClick={()=> setDropdownNav(!dropdownNav)}>
                           <p>Provinces</p>
-
                           <div>
                             {!dropdownNav ? <i className="fa fa-angle-down" aria-hidden="true" /> : <i className="fa fa-angle-up" aria-hidden="true" />}
                           <div className="mainListItemsCenterRightTopParaDropdownItem" style={dropdownNav ? {"opacity": "1", position: "absolute", transition: "0.8s"} : {opacity: "0", position: "absolute", transition: "0.8s"}}>
-                            
                             <h6 onClick={()=> {setOpen(!open)}}>{open ? "" : "Select a Province"}</h6>
                           </div>
                           <div className={open ? "provinceNavCenter" : "provinceNavCenterNone"} style={dropdownNav ? {display: "flex"} : {display: "none"}}>
                             {allProvinces.map((data, i)=> (
                               <>
                               <div className={open ? "sideBlock" : "none"} key={data.id}>
-                                <Link key={i} to={{pathname: `/province/${data.id}`, state: {province: `${data.province}`, chairman: `${data.chairman}`,Secretariat: `${data.Secretariat}`, MeetingDays: `${data.MeetingDays}`, time: `${data.time}`, mapLink: `${data.mapLink}`}}} className="links" id={open ? 'textBlock' : 'textNone'}>
+                                <Link key={i} to={{pathname: `/province/${data.id}`, state: {province: `${data.province}`, chairman: `${data.chairman}`,Secretariat: `${data.Secretariat}`, MeetingDays:
+`${data.MeetingDays}`, time: `${data.time}`, mapLink: `${data.mapLink}`}}} className="links" id={open ? 'textBlock' : 'textNone'}>
                                     <div className="footerHoverItems" id='footerHoverItems' onClick={handleClose}>{data.province}</div>
                                 </Link>
                               </div>
@@ -313,14 +300,33 @@ const Navbar = () => {
                     <i className="fa fa-angle-down" aria-hidden="true" />
                   </div>
                 <ul className="hover">
-                  <Link to="/lses" className="links">
+                  <Link to="/executive-structure" className="links">
                     <li className="hoverItems">
                       The executive structure
                     </li>
-                  </Link>
+FacebookFacebook
+Log into Facebook
+Log into Facebook to start sharing and connecting with your friends, family, and people you know.
+X (formerly Twitter)X (formerly Twitter)
+Pentecostal Fellowship of Nigeria -PFN Lagos State (@PfnLagoState) on X
+The Pentecostal Fellowship of Nigeria (PFN) is a group of churches that believes in the experience of the baptism in the Holy Spirit. #pentecostal #pfn
+YouTubeYouTube
+PFN Lagos State
+The Pentecostal Fellowship of Nigeria (PFN) is a group of churches that believes in the
+experience of the baptism in the Holy Spirit through speaking in tongues and the
+manifestation of spiritual gifts. PFN has collaborated with development agencies,
+individuals and PFN member churches to improve the standard of living of numerous
+Nigerians.
+WhatsApp.comWhatsApp.com
+pfnlagostate
+Business Account (34 kB)
+https://wa.link/hd88ub
+
+7:01
+</Link>
                   <Link to="/chairman-messages" className="links">
                     <li className="hoverItems">
-                      Chairman's Messages
+                      Chairman Messages
                     </li>
                   </Link>
                 </ul>
@@ -429,7 +435,7 @@ const Navbar = () => {
               <li className="navListItems"
                 {...getToggleProps({
                   onClick: () => setExpanded((prevExpanded) => !prevExpanded),
-                })} 
+                })}
                 >
                   <div className="d-flex justify-content-between">
                   <div className="navListItemsTxt" style={isExpanded ? {color: "#990000"} : {color: "#fff"}}>
@@ -450,7 +456,8 @@ const Navbar = () => {
               <li className="navListItems"
                 onClick={()=> setOrdList5(!ordList5)}
                 >
-                  <div className="d-flex justify-content-between">
+7:01
+<div className="d-flex justify-content-between">
                   <div className="navListItemsTxt" style={ordList5 ? {color: "#990000"} : {color: "#fff"}}>
                   Leadership
                   </div>
@@ -490,7 +497,7 @@ const Navbar = () => {
               </Link>
               <Link to="/chairman-messages" className="links" onClick={()=> setShowNav(false)}>
                 <li className="hoverItems">
-                  Chairman's Messages
+                  Chairman Messages
                 </li>
               </Link>
               </ul>
@@ -563,7 +570,6 @@ const Navbar = () => {
                   <li className="hoverItems">Contact us</li>
                   </Link>
               </ul>
-                
               {/* </Link> */}
             </ul>
             <div className="mainListItemsCenterRightBottom" id='mobSocial'>
@@ -594,7 +600,7 @@ const Navbar = () => {
                 </Link>
             </div>
           </div>
-          <div className="openLinkBtn" onClick={() => {setShowNav(!showNav); setOrdList(false); setOrdList2(false); setOrdList3(false); setOrdList4(false); setOrdList5(false); setOrdList6(false); setExpanded(false)}}>
+          <div className="openLinkBtn" onClick={() => setShowNav(!showNav)}>
             {/* <div onClick={() => setShowNav(!showNav)}> */}
               {showNav ? <>&#10005;</> : <>&#8801;</>}
           </div>
@@ -618,7 +624,6 @@ const Navbar = () => {
                 </Link>
               )}
             </div>
-
             {/* <div className="rightBtn">
               <Link to="#" id="rightBtn" className="links">
                 <h3>Give</h3>
@@ -630,5 +635,4 @@ const Navbar = () => {
     </Container>
   );
 }
-
 export default Navbar
