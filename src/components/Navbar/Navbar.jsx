@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
@@ -81,7 +80,7 @@ const Navbar = () => {
 
     useEffect(()=> {
       const getFeatured = async () => {
-        const res = await axios.get("https://pfn-api.onrender.com/currentEvent")
+        const res = await axios.get("https://pfn-lagos.herokuapp.com/currentEvent")
         setFeatured(res.data)
         
       }
@@ -632,4 +631,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-
